@@ -1,0 +1,5 @@
+export {default as HomePage} from './HomePage'
+export {default as PostPage} from './PostPage'
+export {default as ProfilePage} from './ProfilePage'
+export {default as SubmitPage} from './SubmitPage'
+export {default as SubredditPage} from './SubredditPage'
