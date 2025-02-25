@@ -1,4 +1,4 @@
-import "@/styles/PostCard.css"
+
 const PostPage = () => {
   return (
     
