@@ -4,11 +4,11 @@ import { SignInButton,UserButton,useUser } from "@clerk/clerk-react";
 import { Authenticated, Unauthenticated } from "convex/react";
 import { Link,useNavigate } from "react-router-dom";
 import { useState } from "react";
-import CreateDropdown from "../dropdown/CreateDropDown"
+import CreateDropdown from "../dropdown/CreateDropdown";
 const Navbar = () => {
-const {user}  = useUser();
+  const [showDropdown, setShowDropdown] = useState(false);
+  const {user}  = useUser();
 const navigate = useNavigate();
-const [showDropdown, setShowDropdown] = useState(false);
   return (
     <nav className="navbar">
       <div className="navbar-content">
