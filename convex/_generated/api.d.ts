@@ -14,9 +14,12 @@ import type {
   FunctionReference,
 } from "convex/server";
 import type * as helpers_users from "../helpers/users.js";
+import type * as mutations_post from "../mutations/post.js";
 import type * as mutations_subreddit from "../mutations/subreddit.js";
 import type * as mutations_users from "../mutations/users.js";
+import type * as queries_subreddit from "../queries/subreddit.js";
 import type * as queries_users from "../queries/users.js";
+import type * as tables_post from "../tables/post.js";
 import type * as tables_subreddit from "../tables/subreddit.js";
 import type * as tables_users from "../tables/users.js";
 
@@ -30,9 +33,12 @@ import type * as tables_users from "../tables/users.js";
  */
 declare const fullApi: ApiFromModules<{
   "helpers/users": typeof helpers_users;
+  "mutations/post": typeof mutations_post;
   "mutations/subreddit": typeof mutations_subreddit;
   "mutations/users": typeof mutations_users;
+  "queries/subreddit": typeof queries_subreddit;
   "queries/users": typeof queries_users;
+  "tables/post": typeof tables_post;
   "tables/subreddit": typeof tables_subreddit;
   "tables/users": typeof tables_users;
 }>;

@@ -1,6 +1,8 @@
 import {mutation} from '../_generated/server'
 import { getCurrentUserOrThrow } from "../helpers/users";
 import {ConvexError, v} from 'convex/values'
+
+//Create a new Subreddit
 export const create = mutation({
   args: {
     name: v.string(),
