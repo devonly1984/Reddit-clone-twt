@@ -19,3 +19,4 @@ export const userByExternalId = async (ctx: QueryCtx, externalId: string) => {
     .withIndex("by_ExternalId", (q) => q.eq("externalId", externalId))
     .unique();
 };
+

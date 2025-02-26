@@ -1,5 +1,6 @@
 import { query } from "../_generated/server";
 import { v } from "convex/values";
+import { getEnrichedPosts } from "../helpers/post";
 
 export const get = query({
     args: {name:v.string() },
@@ -11,6 +12,17 @@ export const get = query({
           if (!subreddit) {
             return null;
           }
-          return subreddit;
+          const posts = await ctx.db
+            .query("post")
+            .withIndex("by_subreddit", (q) => q.eq("subreddit", subreddit._id))
+            .collect();
+
+            const enrichedPosts = await getEnrichedPosts(ctx,posts)
+
+          return {
+            ...subreddit,
+            posts: enrichedPosts,
+          };
+          
     }
 })
